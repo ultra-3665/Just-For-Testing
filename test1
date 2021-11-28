@@ -6,8 +6,6 @@ local library = {
 	items = { } 
 }
 
-getgenv().window.Frame.Visible
-
 -- Services
 local players = game:GetService("Players")
 local uis = game:GetService("UserInputService")
