@@ -41,7 +41,7 @@ getgenv().Aiming = {
 
     FOV = 0,
 
-    FOVFilled = true
+    FOVFilled = true,
 
     FOVSides = 64,
 
@@ -52,7 +52,7 @@ getgenv().Aiming = {
     HitChance = 100,
 
     Selected = nil,
-    
+
     SelectedPart = nil,
 
     TargetPart = {"Head", "HumanoidRootPart"},
