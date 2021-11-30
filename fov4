@@ -38,21 +38,15 @@ getgenv().Aiming = {
     Enabled = true,
 
     ShowFOV = false,
-
     FOV = 0,
-
     FOVSides = 64,
-
     FOVColour = Color3fromRGB(255, 255, 255),
-
-    FOVFilled = true,
 
     VisibleCheck = true,
     
     HitChance = 100,
 
     Selected = nil,
-
     SelectedPart = nil,
 
     TargetPart = {"Head", "HumanoidRootPart"},
@@ -77,7 +71,7 @@ local circle = Drawingnew("Circle")
 circle.Transparency = 1
 circle.Thickness = 2
 circle.Color = Aiming.FOVColour
-circle.Filled = Aiming.FOVFilled
+circle.Filled = false
 Aiming.FOVCircle = circle
 
 -- // Update
