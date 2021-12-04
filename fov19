@@ -1,13 +1,5 @@
 if getgenv().Aiming then return getgenv().Aiming end
 
-_G.CircleSides = 64 -- How many sides the FOV circle would have.
-_G.CircleColor = Color3.fromRGB(255, 255, 255) -- (RGB) Color that the FOV circle would appear as.
-_G.CircleTransparency = 0.7 -- Transparency of the circle.
-_G.CircleRadius = 80 -- The radius of the circle / FOV.
-_G.CircleFilled = false -- Determines whether or not the circle is filled.
-_G.CircleVisible = true -- Determines whether or not the circle is visible.
-_G.CircleThickness = 0 -- The thickness of the circle.
-
 -- // Services
 local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
@@ -45,16 +37,6 @@ local tableinsert = table.insert
 getgenv().Aiming = {
     Enabled = true,
 
-    FOV = 0,
-    
-    ShowFOV = false,
-  
-    FOVSides = 64,
-    
-    FOVFilled = false,
-
-    FOVColour = Color3fromRGB(25, 25, 25),
-
     VisibleCheck = true,
     
     HitChance = 100,
@@ -80,42 +62,6 @@ getgenv().Aiming = {
 }
 local Aiming = getgenv().Aiming
 
--- // Create circle
-local FOVCircle = Drawing.new("Circle")
-FOVCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
-FOVCircle.Radius = _G.CircleRadius
-FOVCircle.Filled = _G.CircleFilled
-FOVCircle.Color = _G.CircleColor
-FOVCircle.Visible = _G.CircleVisible
-FOVCircle.Radius = _G.CircleRadius
-FOVCircle.Transparency = _G.CircleTransparency
-FOVCircle.NumSides = _G.CircleSides
-FOVCircle.Thickness = _G.CircleThickness
-
-
-    -- // Set Circle Properties
-    RunService.RenderStepped:Connect(function()
-        FOVCircle.Position = Vector2.new(UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y)
-        FOVCircle.Radius = _G.CircleRadius
-        FOVCircle.Filled = _G.CircleFilled
-        FOVCircle.Color = _G.CircleColor
-        FOVCircle.Visible = _G.CircleVisible
-        FOVCircle.Radius = _G.CircleRadius
-        FOVCircle.Transparency = _G.CircleTransparency
-        FOVCircle.NumSides = _G.CircleSides
-        FOVCircle.Thickness = _G.CircleThickness
-        
-        -- // Update
-function Aiming.UpdateFOV()
-    -- // Make sure the circle exists
-    if not (circle) then
-        return
-    end
-
-
-    -- // Return circle
-    return circle
-end
 
 -- // Custom Functions
 local CalcChance = function(percentage)
@@ -452,5 +398,7 @@ Heartbeat:Connect(function()
     Aiming.UpdateFOV()
     Aiming.GetClosestPlayerToCursor()
 end)
+
+
+
 return Aiming
-end)
