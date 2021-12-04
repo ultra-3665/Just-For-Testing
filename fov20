@@ -395,7 +395,7 @@ function Aiming.GetClosestPlayerToCursor()
 end
 
 Heartbeat:Connect(function()
-    Aiming.UpdateFOV()
+    _G.UpdateCircle()
     Aiming.GetClosestPlayerToCursor()
 end)
 
