@@ -104,6 +104,14 @@ FOVCircle.Thickness = _G.CircleThickness
         FOVCircle.Transparency = _G.CircleTransparency
         FOVCircle.NumSides = _G.CircleSides
         FOVCircle.Thickness = _G.CircleThickness
+        
+        -- // Update
+function Aiming.UpdateFOV()
+    -- // Make sure the circle exists
+    if not (circle) then
+        return
+    end
+
 
     -- // Return circle
     return circle
