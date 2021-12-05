@@ -217,7 +217,7 @@ end
 function library:CreateWindow(name, size, hidebutton)
     local window = { }
 
-    ultra-ware = name or ""
+    window.name = name or ""
     window.size = UDim2.fromOffset(size.X, size.Y) or UDim2.fromOffset(492, 598)
     window.hidebutton = hidebutton or Enum.KeyCode.RightShift
     window.theme = library.theme
@@ -290,7 +290,7 @@ function library:CreateWindow(name, size, hidebutton)
     local function checkIfGuiInFront(Pos)
         local objects = coregui:GetGuiObjectsAtPosition(Pos.X, Pos.Y)
         for i,v in pairs(objects) do 
-            if not string.find(v:GetFullName(), ultra-ware) then 
+            if not string.find(v:GetFullName(), window.name) then 
                 table.remove(objects, i)
             end 
         end
@@ -350,7 +350,7 @@ function library:CreateWindow(name, size, hidebutton)
 
     window.NameLabel = Instance.new("TextLabel", window.TopBar)
     window.NameLabel.TextColor3 = window.theme.toptextcolor
-    window.NameLabel.Text = ultra-ware
+    window.NameLabel.Text = window.name
     window.NameLabel.TextXAlignment = Enum.TextXAlignment.Left
     window.NameLabel.Font = window.theme.font
     window.NameLabel.Name = "title"
@@ -3400,7 +3400,7 @@ function library:CreateWindow(name, size, hidebutton)
         function tab:CreateConfigSystem(side)
             local configSystem = { }
 
-            configSystem.configFolder = "ultra-ware"
+            configSystem.configFolder = "window.name"
             if (not isfolder(configSystem.configFolder)) then
                 makefolder(configSystem.configFolder)
             end
