@@ -41,8 +41,9 @@ getgenv().librarytheme = {
     buttoncolor = Color3.fromRGB(49, 49, 49),
     buttoncolor2 = Color3.fromRGB(39, 39, 39),
     itemscolor = Color3.fromRGB(200, 200, 200),
-    itemscolor2 = Color3.fromRGB(210, 210, 210)
+    itemscolor2 = Color3.fromRGB(210, 210, 210),
 }
+local librarytheme = getgenv().librarytheme
 
 if library.theme.cursor and Drawing then
     local success = pcall(function() 
