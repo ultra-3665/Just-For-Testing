@@ -43,7 +43,6 @@ getgenv().librarytheme = {
     itemscolor = Color3.fromRGB(200, 200, 200),
     itemscolor2 = Color3.fromRGB(210, 210, 210)
 }
-local librarytheme = getgenv().librarytheme
 
 if library.theme.cursor and Drawing then
     local success = pcall(function() 
