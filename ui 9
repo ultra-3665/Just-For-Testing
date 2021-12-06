@@ -18,7 +18,7 @@ local player = players.LocalPlayer
 local mouse = player:GetMouse()
 local camera = game.Workspace.CurrentCamera
 
-library.theme = {
+getgenv().librarytheme = {
     fontsize = 15,
     titlesize = 18,
     font = Enum.Font.Code,
@@ -43,6 +43,7 @@ library.theme = {
     itemscolor = Color3.fromRGB(200, 200, 200),
     itemscolor2 = Color3.fromRGB(210, 210, 210)
 }
+local librarytheme = getgenv().librarytheme
 
 if library.theme.cursor and Drawing then
     local success = pcall(function() 
